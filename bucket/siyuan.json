@@ -3,8 +3,11 @@
     "description": "思源笔记",
     "version": "0.4.7",
     "url": "https://github.com/siyuan-note/siyuan/releases/download/v0.4.7/siyuan-0.4.7-win.exe#dl.7z",
-    "hash": "5a94158aa3dd3c76e215ad6572b69896c36be1e9392485fcddcdce35811c88ac",
+    "hash": "58f6846e8ef01dcc30d24acb7385be7c2436baddf5e12d1c551316d3e89c4f90",
     "bin": "SiYuan.exe",
+    "uninstaller": {
+        "file": "Uninstall SiYuan.exe"
+    },
     "shortcuts": [
         [
             "SiYuan.exe",
@@ -13,7 +16,7 @@
     ],
     "persist": "users",
     "checkver": {
-        "url": "https://github.com/siyuan-note/siyuan/releases/download",
+        "url": "https://github.com/siyuan-note/siyuan/releases",
         "regex": "siyuan-[\\d.]-win.exe"
     },
     "autoupdate": {

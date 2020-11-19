@@ -1,0 +1,22 @@
+{
+    "homepage": "https://github.com/siyuan-note/siyuan",
+    "description": "思源笔记",
+    "version": "0.4.7",
+    "url": "https://github.com/siyuan-note/siyuan/releases/download/v0.4.7/siyuan-0.4.7-win.exe#dl.7z",
+    "hash": "5a94158aa3dd3c76e215ad6572b69896c36be1e9392485fcddcdce35811c88ac",
+    "bin": "SiYuan.exe",
+    "shortcuts": [
+        [
+            "SiYuan.exe",
+            "SiYuan"
+        ]
+    ],
+    "persist": "users",
+    "checkver": {
+        "url": "https://github.com/siyuan-note/siyuan/releases/download",
+        "regex": "siyuan-[\\d.]-win.exe"
+    },
+    "autoupdate": {
+        "url": "https://github.com/siyuan-note/siyuan/releases/download/v$version/siyuan-$version-win.exe#dl.7z"
+    }
+}

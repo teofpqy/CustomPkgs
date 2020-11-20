@@ -21,24 +21,6 @@ ${apps.map((x) => `[${x.description}](${x.homepage})| ${x.notes.join('')} | ${x.
     return fs.writeFile(readMePath, readme);
 }
 
-const execPromise = async (cmd) => {
-    return new Promise((resolve , reject)=> {
-        return cp.exec(cmd, (error, stdout, stderr) => {
-            if (!error) {
-                resolve(stdout);
-            }
-            reject(stderr);
-        });
-    })
-}
-const pushToGit = async () => {
-    const commitMsg = `auto Update README.md`;
-    console.log(`${path.join(__dirname, '../README.md')}`);
-    execPromise('git add README.md')
-        .then(() => execPromise(`git commit -m "${commitMsg}"`))
-        .then(() => execPromise('git push'))
-        .catch((eror) => console.error(eror));
-}
 
 (async () => {
     const apps = await fs.readdir(bucketDir).then(async (pahtList) => {
@@ -48,7 +30,6 @@ const pushToGit = async () => {
         return jsonList.map((x) => require(x));
     });
     await generatorReadMe(apps);
-    await pushToGit().catch((err) => console.error(err));
 })()
 
 

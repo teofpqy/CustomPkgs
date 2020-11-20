@@ -1,0 +1,29 @@
+on:
+  push:
+    paths:
+    - 'bucket/**'
+
+name: GeneratorReadMe
+jobs:
+  GeneratorReadMe:
+    name: GeneratorReadMe
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@main
+    - name: Set up NodeJS
+      uses: actions/setup-node@v1
+      with:
+        node-version: 15.1.0
+    - name: GeneratorReadMe
+      run: npm run genReadMe
+    - name: commit
+      run: |
+        git config --global user.email teofpqy@outlook.com
+        git config --global user.name teofpqy
+        git add README.md
+        git commit -m "auto Update README.md"
+
+    - name: push
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}

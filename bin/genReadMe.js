@@ -1,13 +1,10 @@
-//#! bin/node
 const fs = require('fs').promises;
 const path = require('path');
-const exec = require('child_process').exec;
+const cp = require('child_process');
 
 const bucketDir = path.resolve(__dirname, '../bucket');
 const readMePath = path.resolve(__dirname, '../README.md');
 // get all file path in bucket
-
-
 
 
 const generatorReadMe = async (apps) => {
@@ -17,25 +14,30 @@ const generatorReadMe = async (apps) => {
 
 | 软件名字 | 软件简介| 版本|
 |-|-|-|
-${
-    apps.map((x) => `[${x.description}](${x.homepage})| ${x.notes.join('')} | ${x.version}|`).join('\n')
-}
+${apps.map((x) => `[${x.description}](${x.homepage})| ${x.notes.join('')} | ${x.version}|`).join('\n')
+        }
 
 `
     return fs.writeFile(readMePath, readme);
 }
 
+const execPromise = async (cmd) => {
+    return new Promise((resolve , reject)=> {
+        return cp.exec(cmd, (error, stdout, stderr) => {
+            if (!error) {
+                resolve(stdout);
+            }
+            reject(stderr);
+        });
+    })
+}
 const pushToGit = async () => {
     const commitMsg = `auto Update README.md`;
-    return new Promise((resolve, reject) => {
-        exec(`git commit --message ${commitMsg} --only "README.md"`, (error, stdout) => {
-            if (!error) {
-                exec('git push');
-                return resolve();
-            }
-            return reject();
-        });
-    });
+    console.log(`${path.join(__dirname, '../README.md')}`);
+    execPromise('git add README.md')
+        .then(() => execPromise(`git commit -m "${commitMsg}"`))
+        .then(() => execPromise('git push'))
+        .catch((eror) => console.error(eror));
 }
 
 (async () => {
@@ -46,7 +48,7 @@ const pushToGit = async () => {
         return jsonList.map((x) => require(x));
     });
     await generatorReadMe(apps);
-    await pushToGit();
+    await pushToGit().catch((err) => console.error(err));
 })()
 
 

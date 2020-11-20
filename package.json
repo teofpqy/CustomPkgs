@@ -1,0 +1,24 @@
+{
+  "name": "custompkgs",
+  "version": "1.0.0",
+  "description": "> 共有软件 1 款",
+  "main": "index.js",
+  "bin": {
+    "CustomPkgs": "genReadMe.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "genReadMe": "node ./bin/genReadMe.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teofpqy/CustomPkgs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/teofpqy/CustomPkgs/issues"
+  },
+  "homepage": "https://github.com/teofpqy/CustomPkgs#readme"
+}

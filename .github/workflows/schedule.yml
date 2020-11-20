@@ -10,6 +10,7 @@ jobs:
     - uses: actions/checkout@main
     - name: Excavate
       uses: Ash258/Scoop-GithubActions@stable
+      run: 'npm run genReadMe'
       env:
         GITH_EMAIL: teofpqy@outlook.com
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

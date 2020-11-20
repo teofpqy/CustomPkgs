@@ -14,8 +14,8 @@ const generatorReadMe = async (apps) => {
 
 | 软件名字 | 软件简介| 版本|
 |-|-|-|
-${apps.map((x) => `[${x.description}](${x.homepage})| ${x.notes.join('')} | ${x.version}|`).join('\n')
-        }
+${apps.map((x) => `[${x.description}](${x.homepage})| ${
+    Array.isArray(x.notes) ? x.notes.join('') : x.notes} | ${x.version}|`).join('\n')}
 
 `
     return fs.writeFile(readMePath, readme);

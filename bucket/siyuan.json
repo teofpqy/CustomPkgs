@@ -5,7 +5,7 @@
     "url": "https://github.com/siyuan-note/siyuan/releases/download/v0.4.9/siyuan-0.4.9-win.zip#dl.7z",
     "hash": "06fef968a5a80b9fad1a5e85d5c63229fb1422952539e0e42c76a1a2023d48a5",
     "bin": "SiYuan.exe",
-    "notes": "思源笔记是一款 Markdown 块级引用和双向链接的网状笔记应用.",
+    "notes": "思源笔记是一款 Markdown 块级引用和双向链接的网状笔记应用。",
     "shortcuts": [
         [
             "SiYuan.exe",

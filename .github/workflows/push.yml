@@ -1,7 +1,9 @@
 on:
   push:
+    branches: 
+      - master
     paths:
-    - 'bucket/**'
+      - 'bucket/*'
 
 name: GeneratorReadMe
 jobs:

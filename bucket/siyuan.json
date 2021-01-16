@@ -1,9 +1,9 @@
 {
     "homepage": "https://github.com/siyuan-note/siyuan",
     "description": "思源笔记",
-    "version": "0.6.0",
-    "url": "https://github.com/siyuan-note/siyuan/releases/download/v0.6.0/siyuan-0.6.0-win.zip#dl.7z",
-    "hash": "575418155abce4e52e266dcfed20cfd7f60c215c87bac40166026e679d2ae139",
+    "version": "0.6.1",
+    "url": "https://github.com/siyuan-note/siyuan/releases/download/v0.6.1/siyuan-0.6.1-win.zip#dl.7z",
+    "hash": "ff410abe68c83ff67cc8363f111562df992447b5ed7d21a339f70a3b72021782",
     "bin": "SiYuan.exe",
     "notes": "思源笔记是一款 Markdown 块级引用和双向链接的网状笔记应用。",
     "shortcuts": [
